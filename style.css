@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+section {
+    padding: 80px 20px;
+}
+
+header {
+    background-color: #2E2E2E;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    transition: 0.5s;
+    color: #4BC3F2;
+}
+
+.Hero-section {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("img/eletricasoares15@gmail.com.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.Hero-section h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.Hero-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.Hero-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background-color: #4BC3F2;
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #03588C;
+}
+
+.services-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.services-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.service-container {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.service-item {
+    display: inline-block;
+    width: 400px;
+    margin: 12px;
+    padding: 32px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #4BC3F2;
+    border-right: 2px solid #4BC3F2;
+    text-align: left;
+    transition: 0.5s;
+}
+
+.service-item ul {
+    margin-top: 16px;
+    padding-left: 20px;
+    margin-bottom: 32px;
+}
+
+.service-item li {
+    margin-bottom: 8px;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.about-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-content {
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-content h2, .about-content p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.section-contact {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #03588C, #4BC3F2);
+    text-align: center;
+    color: #fff;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-content h2, .contact-content p {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #03588C;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
