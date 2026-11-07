@@ -1,96 +1,581 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soares Instalações Elétricas | Eletricista em Blumenau e Vale do Itajaí (DDD 47)</title>
+    <meta name="description"
+        content="Eletricista em Blumenau e região DDD 47. Instalações elétricas residenciais, prediais e industriais seguras com certificação NR-10. Orçamento sem compromisso.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title"
+        content="Soares Instalações Elétricas | Eletricista em Blumenau e Vale do Itajaí (DDD 47)">
+    <meta property="og:description"
+        content="Eletricista em Blumenau e região DDD 47. Instalações elétricas residenciais, prediais e industriais seguras com certificação NR-10. Orçamento sem compromisso.">
+    <meta property="og:image" content="./img/Logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title"
+        content="Soares Instalações Elétricas | Eletricista em Blumenau e Vale do Itajaí (DDD 47)">
+    <meta name="twitter:description"
+        content="Eletricista em Blumenau e região DDD 47. Instalações elétricas residenciais, prediais e industriais seguras com certificação NR-10. Orçamento sem compromisso.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Soares Instalações Elétricas</title>
+    <script src="script.js" defer></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Electrician",
+      "name": "Soares Instalações Elétricas",
+      "description": "Instalações elétricas residenciais, prediais e industriais seguras com certificação NR-10 e NR-35 em Blumenau e Vale do Itajaí (DDD 47).",
+      "telephone": "+5547991054858",
+      "email": "eletricasoares15@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Blumenau",
+        "addressRegion": "SC",
+        "addressCountry": "BR"
+      },
+      "areaServed": "Blumenau e Vale do Itajaí (DDD 47)",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <img src="./img/Logo.png" alt="Soares Instalações Elétricas Logo" class="logo"> <!-- Adicione o caminho para o logo da empresa -->
-            <div class="menu">
-                <a href="#hero">Início</a>
-                <a href="#services">Serviços</a>
-                <a href="#about">Quem Somos</a>
-                <a href="#contact">Contato</a>
-            </div>
-        </nav>
+
+    <!-- Header & Navegação Responsiva -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#inicio" class="brand-link" aria-label="Soares Instalações Elétricas - Ir para o início">
+                <picture>
+                    <source srcset="./img/Logo.webp" type="image/webp">
+                    <img src="./img/Logo.png" alt="Soares Instalações Elétricas Logo" class="logo" width="120"
+                        height="48" fetchpriority="high">
+                </picture>
+            </a>
+
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu"
+                aria-label="Abrir menu de navegação">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav id="nav-menu" class="nav-menu" aria-label="Navegação Principal">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#sobre" class="nav-link">Quem Somos</a></li>
+                    <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <a href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Vim%20pelo%20menu%20do%20site%20da%20Soares%20Instala%C3%A7%C3%B5es%20e%20gostaria%20de%20um%20or%C3%A7amento."
+                    target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-header">
+                    Orçamento Rápido
+                </a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section class="Hero-section" id="hero">
-            <div class="Hero-content">
-                <h1>Bem-vindo à nossa página de destino</h1>
-                <p>Descubra nossos serviços e soluções inovadoras para atender às suas necessidades.</p>
-                <button>Solicitar Orçamento</button> <!-- Botão para direcionar o usuário a uma seção específica ou página de detalhes -->
+        <!-- Hero Section com Vídeo de Fundo -->
+        <section class="hero-section" id="inicio">
+            <!-- Background Video com Overlay Translúcido -->
+            <div class="hero-video-wrapper" aria-hidden="true">
+                <video class="hero-video" autoplay loop muted playsinline poster="./img/hero-bg.webp">
+                    <source src="./video/hero-video.mp4" type="video/mp4">
+                </video>
+                <div class="hero-video-overlay"></div>
             </div>
-        </section>
 
-        <section class="services-section" id="services">
-            <div class="services-content">
-                <!-- Seção de Serviços em cards -->
-                <h2>Nossos Serviços</h2>
-                    <div class="service-container">
-                        <div class="service-item">
-                            <h3>Instalações Prediais</h3>
-                            <ul>
-                                <li>Manutenção elétrica</li>
-                                <li>Instalações industriais</li>
-                                <li>Projetos elétricos</li>
-                                <li>Automação básica</li>
-                            </ul>
-                            <button>Solicitar Orçamento</button> 
-                        </div>
-                        <div class="service-item">
-                            <h3>Instalações Residenciais</h3>
-                            <ul>
-                                <li>Instalação de tomadas</li>
-                                <li>Troca de fiação</li>
-                                <li>Quadro de disjuntores</li>
-                                <li>Iluminação interna</li>
-                            </ul>
-                            <button>Solicitar Orçamento</button> 
-                        </div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Instalações Elétricas Seguras e Sem Dor de Cabeça para Sua Casa ou Empresa</h1>
+                    <p class="hero-subtitle">
+                        Projetos, manutenção preventiva e reparos emergenciais executados com rigor técnico (NR-10,
+                        NR-35 e NBR 5410) e garantia formal por escrito em Blumenau e toda a região do Vale do Itajaí
+                        (DDD 47).
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Soares%20Instala%C3%A7%C3%B5es%20e%20gostaria%20de%20um%20or%C3%A7amento."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                            <svg class="icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.603 5.744-1.506c1.693.924 3.633 1.449 5.7 1.449 6.627 0 12-5.373 12-12s-5.373-12-11.444-11.408z" />
+                            </svg>
+                            Solicitar Orçamento Grátis via WhatsApp
+                        </a>
+                        <a href="#servicos" class="btn btn-outline">Conhecer Serviços</a>
                     </div>
+                    <p class="hero-microproof">
+                        ✓ Resposta em até 30 min • ✓ Visita técnica sem taxa oculta • ✓ Profissionais certificados
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section class="about-section" id="about">
-            <div class="about-content">
-                <!-- Seção Sobre Nós -->
-                <h2>Quem Somos</h2>
-                <p>
-                    Somos especialistas em instalações elétricas residenciais e prediais,
-                    atuando com segurança, qualidade e total conformidade com as normas técnicas.
-                </p>
-
-                <p>
-                    Nosso compromisso é oferecer soluções rápidas e eficientes,
-                    garantindo tranquilidade e confiança para nossos clientes.
-                </p>
+        <!-- Faixa de Selos de Segurança / Trust Badges -->
+        <section class="trust-badges" aria-label="Garantias e Certificações">
+            <div class="container badges-grid">
+                <div class="badge-card">
+                    <div class="badge-icon" aria-hidden="true">🛡️</div>
+                    <div class="badge-text">
+                        <strong>Certificação NR-10 e NR-35</strong>
+                        <span>Trabalho seguro em eletricidade e altura</span>
+                    </div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon" aria-hidden="true">📝</div>
+                    <div class="badge-text">
+                        <strong>Garantia Formal por Escrito</strong>
+                        <span>Garantia de conformidade pós-serviço</span>
+                    </div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon" aria-hidden="true">📋</div>
+                    <div class="badge-text">
+                        <strong>Emissão de Nota e Laudo Técnico</strong>
+                        <span>Documentação completa para empresas e condomínios</span>
+                    </div>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon" aria-hidden="true">📍</div>
+                    <div class="badge-text">
+                        <strong>Atendimento Especializado DDD 47</strong>
+                        <span>Agilidade em Blumenau e Vale do Itajaí</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section-contact" id="contact">
-            <div class="contact-content">
-                <!-- Seção de Contato -->
-                <h2>Entre em Contato</h2>
-                <p>Fale conosco e solicite seu orçamento sem compromisso.</p>
+        <!-- Seção de Serviços -->
+        <section class="services-section" id="servicos">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Soluções Completas</span>
+                    <h2>Nossos Serviços Especializados</h2>
+                    <p>Atendemos demandas residenciais, prediais e industriais seguindo rigorosamente a norma NBR 5410.
+                    </p>
+                </div>
+
+                <div class="service-container">
+                    <!-- Card 1: Instalações Residenciais -->
+                    <article class="service-item">
+                        <div class="service-icon" aria-hidden="true">🏠</div>
+                        <h3>Instalações Residenciais</h3>
+                        <p class="service-desc">Segurança e conforto para sua família com instalações dimensionadas para
+                            evitar sobrecargas e curtos-circuitos.</p>
+                        <ul class="service-list">
+                            <li>Iluminação moderna em LED e projetos luminotécnicos</li>
+                            <li>Montagem e adequação de quadros de distribuição (QDC)</li>
+                            <li>Instalação de disjuntores DR e protetores de surto (DPS)</li>
+                            <li>Troca de fiação antiga e reforma elétrica completa</li>
+                            <li>Circuitos dedicados para ar-condicionado e chuveiros</li>
+                        </ul>
+                        <a href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20Residencial."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                            Orçar Serviço Residencial
+                        </a>
+                    </article>
+
+                    <!-- Card 2: Predial & Condomínios -->
+                    <article class="service-item">
+                        <div class="service-icon" aria-hidden="true">🏢</div>
+                        <h3>Predial &amp; Condomínios</h3>
+                        <p class="service-desc">Parceria confiável para síndicos e administradoras com foco em
+                            disponibilidade contínua e prevenção de falhas.</p>
+                        <ul class="service-list">
+                            <li>Manutenção elétrica preventiva e corretiva para síndicos</li>
+                            <li>Adequação de entrada de energia padrão Celesc/concessionária</li>
+                            <li>Automação de bombas d'água e quadros de comando</li>
+                            <li>Sensores de presença e iluminação de emergência</li>
+                            <li>Inspeção termográfica e revisão de barramentos</li>
+                        </ul>
+                        <a href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20Predial%20ou%20Condom%C3%ADnio."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                            Orçar Serviço Predial
+                        </a>
+                    </article>
+
+                    <!-- Card 3: Comercial & Pequena Indústria -->
+                    <article class="service-item">
+                        <div class="service-icon" aria-hidden="true">🏭</div>
+                        <h3>Comercial &amp; Pequena Indústria</h3>
+                        <p class="service-desc">Infraestrutura robusta para manter seu comércio ou indústria operando
+                            com máxima eficiência energética.</p>
+                        <ul class="service-list">
+                            <li>Infraestrutura aparente em perfilados, eletrocalhas e eletrodutos</li>
+                            <li>Montagem de painéis e comandos elétricos</li>
+                            <li>Balanceamento de fases e redimensionamento de cargas</li>
+                            <li>Quadros trifásicos e alimentação de maquinário</li>
+                            <li>Instalação de sistemas de nobreaks e geradores</li>
+                        </ul>
+                        <a href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20Comercial%20ou%20Industrial."
+                            target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                            Orçar Serviço Comercial
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Quem Somos & Diferenciais -->
+        <section class="about-section" id="sobre">
+            <div class="container about-grid">
+                <div class="about-content">
+                    <span class="section-tag">Autoridade Técnica</span>
+                    <h2>Quem Somos &amp; Por Que Escolher a Soares?</h2>
+                    <p>
+                        A <strong>Soares Instalações Elétricas</strong> é referência em engenharia e execução de
+                        serviços elétricos em Blumenau e região do Vale do Itajaí (DDD 47). Atuamos com foco absoluto na
+                        proteção patrimonial e na segurança da vida, eliminando gambiarras, desperdício de energia e
+                        riscos de incêndio.
+                    </p>
+                    <p>
+                        Nossa equipe trabalha alinhada às diretrizes da <strong>NBR 5410</strong>,
+                        <strong>NR-10</strong> e <strong>NR-35</strong>, entregando soluções limpas, organizadas e
+                        duradouras tanto para residências quanto para condomínios e empresas.
+                    </p>
+                </div>
+
+                <div class="differentials-grid">
+                    <div class="diff-card">
+                        <h3>1. Transparência Orçamentária</h3>
+                        <p>Orçamento detalhado antes do início do serviço, especificando materiais e mão de obra sem
+                            surpresas ou taxas ocultas.</p>
+                    </div>
+                    <div class="diff-card">
+                        <h3>2. Limpeza e Organização</h3>
+                        <p>Cuidado integral com seu imóvel durante e após a execução, com identificação clara de todos
+                            os disjuntores no quadro elétrico.</p>
+                    </div>
+                    <div class="diff-card">
+                        <h3>3. Ferramental Calibrado e Normatizado</h3>
+                        <p>Uso de instrumentos de medição precisos e aplicação exclusiva de componentes certificados
+                            pelo INMETRO conforme a NBR 5410.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Depoimentos -->
+        <section class="testimonials-section" id="depoimentos">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Prova Social</span>
+                    <h2>O Que Nossos Clientes Dizem</h2>
+                    <p>A satisfação de quem já confiou a segurança elétrica do seu imóvel à nossa equipe.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Depoimento 1 -->
+                    <article class="testimonial-card">
+                        <div class="stars" aria-label="Avaliação 5 de 5 estrelas">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Contratamos a Soares para reformar o quadro geral e a iluminação de emergência do prédio.
+                            Serviço impecável, dentro do prazo e com emissão de nota fiscal."
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Carlos Eduardo M.</strong>
+                            <span>Síndico - Residencial das Flores</span>
+                        </div>
+                    </article>
+
+                    <!-- Depoimento 2 -->
+                    <article class="testimonial-card">
+                        <div class="stars" aria-label="Avaliação 5 de 5 estrelas">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Os disjuntores da minha casa desarmavam sempre que ligávamos o ar-condicionado. A equipe
+                            identificou a sobrecarga, refez os circuitos e deixou tudo identificado e limpo."
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Fernanda Krueger</strong>
+                            <span>Proprietário Residencial</span>
+                        </div>
+                    </article>
+
+                    <!-- Depoimento 3 -->
+                    <article class="testimonial-card">
+                        <div class="stars" aria-label="Avaliação 5 de 5 estrelas">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
+                                <path
+                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-quote">
+                            "Excelente atendimento em Blumenau! Fizeram toda a infraestrutura em eletrocalhas e
+                            balanceamento trifásico da nossa loja sem interromper nosso atendimento."
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Roberto Zimmermann</strong>
+                            <span>Gestor de Comércio Local</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de FAQ Acordeão -->
+        <section class="faq-section" id="faq">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <span class="section-tag">Tire Suas Dúvidas</span>
+                    <h2>Perguntas Frequentes (FAQ)</h2>
+                    <p>Respostas claras sobre nossos prazos, garantias e atendimento técnico.</p>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-question">Como funciona o agendamento de visitas técnicas?</summary>
+                        <div class="faq-answer">
+                            <p>Você entra em contato pelo WhatsApp ou formulário, explica brevemente sua necessidade e
+                                agendamos um horário conveniente. Avaliamos a instalação no local e entregamos um
+                                orçamento transparente e sem taxas ocultas.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Vocês emitem nota fiscal e laudo de conformidade?</summary>
+                        <div class="faq-answer">
+                            <p>Sim! Emitimos Nota Fiscal de serviço para pessoas físicas, condomínios e empresas, além
+                                de garantia formal por escrito e documentação técnica de conformidade segundo a NBR
+                                5410.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Quais são as formas de pagamento aceitas?</summary>
+                        <div class="faq-answer">
+                            <p>Aceitamos PIX, transferência bancária, cartões de crédito com parcelamento facilitado e
+                                faturamento via boleto para condomínios e clientes corporativos.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-question">Qual a região exata atendida?</summary>
+                        <div class="faq-answer">
+                            <p>Atendemos Blumenau, Gaspar, Indaial, Pomerode, Timbó, Brusque e demais municípios do Vale
+                                do Itajaí e região DDD 47 em Santa Catarina.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato e Formulário -->
+        <section class="section-contact" id="contato">
+            <div class="container contact-grid">
+                <div class="contact-content">
+                    <span class="section-tag">Atendimento Imediato</span>
+                    <h2>Entre em Contato e Solicite Seu Orçamento</h2>
+                    <p>Prefere falar agora mesmo ou enviar os detalhes do serviço? Escolha o canal de sua preferência
+                        abaixo:</p>
 
                     <div class="contact-info">
-                        <p>📞 (47) 9 9105-4858</p>
-                        <p>📧 eletricasoares15@gmail.com</p>
+                        <div class="contact-item">
+                            <strong>Telefone / Emergências:</strong>
+                            <a href="tel:+5547991054858">📞 (47) 9 9105-4858</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>E-mail Corporativo:</strong>
+                            <a href="mailto:eletricasoares15@gmail.com">📧 eletricasoares15@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Região de Cobertura:</strong>
+                            <span>📍 Blumenau e Vale do Itajaí - SC (DDD 47)</span>
+                        </div>
                     </div>
 
-                <a href="https://wa.me/5547991054858" target="_blank">
-                    <button>Falar no WhatsApp</button>
-                </a><!-- Botão para abrir um formulário de contato ou redirecionar para uma página de contato -->
+                    <a href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Vim%20pela%20se%C3%A7%C3%A3o%20de%20contato%20do%20site%20e%20gostaria%20de%20falar%20com%20um%20eletricista."
+                        target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                        Chamar Direto no WhatsApp
+                    </a>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <h3>Descreva Sua Necessidade</h3>
+
+                        <div class="form-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required
+                                autocomplete="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone / WhatsApp *</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="Ex: (47) 99999-9999" required
+                                autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo-imovel">Tipo de Imóvel / Serviço *</label>
+                            <select id="tipo-imovel" name="tipo-imovel" required>
+                                <option value="Residencial">Instalação ou Reparo Residencial</option>
+                                <option value="Predial / Condomínio">Manutenção Predial / Condomínio</option>
+                                <option value="Comercial / Industrial">Comercial ou Pequena Indústria</option>
+                                <option value="Emergência Elétrica">Atendimento Emergencial</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Descrição da Necessidade *</label>
+                            <textarea id="mensagem" name="mensagem" rows="4"
+                                placeholder="Conte-nos brevemente o que você precisa (ex: troca de disjuntor, instalação de tomadas, laudo)..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Enviar Solicitação via WhatsApp
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
-    <footer>
-    <p>&copy; 2026 Soares Instalações Elétricas. Todos os direitos reservados.</p>
+
+    <!-- Rodapé Completo MD3 -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <!-- Coluna 1: Marca & Certificações -->
+            <div class="footer-col footer-brand">
+                <picture>
+                    <source srcset="./img/Logo.webp" type="image/webp">
+                    <img src="./img/Logo.png" alt="Soares Instalações Elétricas Logo" class="footer-logo" width="120" height="48" loading="lazy">
+                </picture>
+                <p class="footer-desc">
+                    Especialistas em instalações, manutenção preventiva e reformas elétricas residenciais, prediais e industriais em Blumenau e Vale do Itajaí (DDD 47).
+                </p>
+                <div class="footer-badges">
+                    <span class="footer-badge">Certificado NR-10</span>
+                    <span class="footer-badge">Certificado NR-35</span>
+                    <span class="footer-badge">NBR 5410</span>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Serviços -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Nossos Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicos">Instalações Residenciais</a></li>
+                    <li><a href="#servicos">Manutenção Predial &amp; Síndicos</a></li>
+                    <li><a href="#servicos">Comercial &amp; Pequena Indústria</a></li>
+                    <li><a href="#servicos">Quadros de Distribuição (QDC)</a></li>
+                    <li><a href="#servicos">Padrão de Entrada Celesc</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Navegação Rápida -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#faq">Perguntas Frequentes</a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 4: Canais de Atendimento -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Atendimento</h4>
+                <div class="footer-contact">
+                    <p><strong>📞 Telefone / Emergência:</strong><br><a href="tel:+5547991054858">(47) 9 9105-4858</a></p>
+                    <p><strong>📧 E-mail Corporativo:</strong><br><a href="mailto:eletricasoares15@gmail.com">eletricasoares15@gmail.com</a></p>
+                    <p><strong>📍 Região Atendida:</strong><br>Blumenau e Vale do Itajaí - SC</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Soares Instalações Elétricas. Todos os direitos reservados. CNPJ e Laudos Técnicos disponíveis sob solicitação.</p>
+                <p class="footer-credits">Conformidade ABNT NBR 5410 • Segurança NR-10 &amp; NR-35</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a class="whatsapp-float"
+        href="https://wa.me/5547991054858?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20preciso%20de%20atendimento%20el%C3%A9trico."
+        target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.124 1.535 5.862l-1.535 5.603 5.744-1.506c1.693.924 3.633 1.449 5.7 1.449 6.627 0 12-5.373 12-12s-5.373-12-11.444-11.408z" />
+        </svg>
+        <span class="whatsapp-tooltip">Orçamento Rápido</span>
+    </a>
 </body>
+
 </html>

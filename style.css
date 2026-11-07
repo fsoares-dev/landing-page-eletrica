@@ -1,198 +1,1268 @@
-* {
+/* ==========================================================================
+   Soares Instalações Elétricas - Material Design 3 (MD3 / Material You)
+   Design System & Responsive Stylesheet
+   ========================================================================== */
+
+:root {
+    /* ----------------------------------------------------------------------
+       1. MD3 COLOR SYSTEM - Baseado na Identidade da Logo Soares
+       (Azul Elétrico #4BC3F2, Azul Claro #81B6FA, Azul Corporativo #03588C, Navy #0B132B)
+       ---------------------------------------------------------------------- */
+    --color-logo-blue: #81B6FA;
+    --color-logo-darkblue: #03588C;
+    --color-logo-navy: #0B132B;
+    --color-logo-dark: #070D1E;
+
+    --md-sys-color-primary: #0284C7;
+    --md-sys-color-on-primary: #FFFFFF;
+    --md-sys-color-primary-container: #CBE6FF;
+    --md-sys-color-on-primary-container: #001E30;
+
+    --md-sys-color-secondary: #50606E;
+    --md-sys-color-on-secondary: #FFFFFF;
+    --md-sys-color-secondary-container: #D3E5F5;
+    --md-sys-color-on-secondary-container: #0C1D29;
+
+    --md-sys-color-tertiary: #0F5B8C;
+    --md-sys-color-on-tertiary: #001E30;
+    --md-sys-color-tertiary-container: #E0F2FE;
+    --md-sys-color-on-tertiary-container: #03588C;
+
+    /* Acentos de Conversão (WhatsApp / Call-to-Action) alinhados ao MD3 */
+    --color-accent-whatsapp: #15803D;
+    --color-accent-whatsapp-hover: #15803D;
+    --color-accent-whatsapp-container: #DCFCE7;
+    --color-on-whatsapp-container: #14532D;
+
+    /* Superfícies & Containers de Elevação (Surface Container Scale MD3) */
+    --md-sys-color-surface: #F8FAFD;
+    --md-sys-color-on-surface: #191C1E;
+    --md-sys-color-surface-dim: #D8DAE0;
+    --md-sys-color-surface-bright: #F8FAFD;
+    --md-sys-color-surface-container-lowest: #FFFFFF;
+    --md-sys-color-surface-container-low: #F1F4FA;
+    --md-sys-color-surface-container: #EBEFF5;
+    --md-sys-color-surface-container-high: #E5E9EF;
+    --md-sys-color-surface-container-highest: #DFE3E9;
+
+    --md-sys-color-surface-variant: #DEE3EB;
+    --md-sys-color-on-surface-variant: #42474E;
+    --md-sys-color-outline: #72777F;
+    --md-sys-color-outline-variant: #C2C7CF;
+    --md-sys-color-inverse-surface: #2E3134;
+    --md-sys-color-inverse-on-surface: #EFF1F5;
+
+    /* Compatibilidade reversa com tokens definidos nas specs SDD */
+    --color-primary: #0284C7;
+    --color-primary-dark: #0369A1;
+    --color-secondary: #0F172A;
+    --color-bg-light: #F8FAFD;
+    --color-surface: #FFFFFF;
+    --color-text: var(--md-sys-color-on-surface);
+    --color-text-muted: var(--md-sys-color-on-surface-variant);
+    --color-border: var(--md-sys-color-outline-variant);
+
+    /* ----------------------------------------------------------------------
+       2. MD3 TYPOGRAPHY SCALE
+       ---------------------------------------------------------------------- */
+    --font-sans: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+    /* ----------------------------------------------------------------------
+       3. MD3 SHAPE SCALE (Border Radius)
+       ---------------------------------------------------------------------- */
+    --md-sys-shape-corner-none: 0px;
+    --md-sys-shape-corner-extra-small: 4px;
+    --md-sys-shape-corner-small: 8px;
+    --md-sys-shape-corner-medium: 12px;
+    --md-sys-shape-corner-large: 16px;
+    --md-sys-shape-corner-extra-large: 28px;
+    --md-sys-shape-corner-full: 9999px;
+
+    /* ----------------------------------------------------------------------
+       4. MD3 ELEVATION SCALE (Ambient + Key Shadows)
+       ---------------------------------------------------------------------- */
+    --md-sys-elevation-level0: none;
+    --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.08), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+    --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.08), 0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+    --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+    --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.10), 0px 2px 3px 0px rgba(0, 0, 0, 0.18);
+    --md-sys-elevation-level5: 0px 8px 14px 6px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.18);
+
+    /* ----------------------------------------------------------------------
+       5. MD3 MOTION & EASING
+       ---------------------------------------------------------------------- */
+    --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --md-sys-motion-duration-short: 150ms;
+    --md-sys-motion-duration-medium: 250ms;
+    --md-sys-motion-duration-long: 350ms;
+}
+
+/* ==========================================================================
+   Reset & Base Acessível
+   ========================================================================== */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 16px;
+    background-color: var(--md-sys-color-surface);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: var(--font-sans);
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface);
+    line-height: 1.6;
+    letter-spacing: 0.15px;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
 }
 
-section {
-    padding: 80px 20px;
-}
-
-header {
-    background-color: #2E2E2E;
-    padding: 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1000px;
-    margin: auto;
-}
-
-img {
+img,
+svg {
     max-width: 100%;
     height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Acessibilidade WCAG 2.1: Foco visível no padrão MD3 */
+:focus-visible {
+    outline: 3px solid var(--md-sys-color-primary);
+    outline-offset: 3px;
+    border-radius: var(--md-sys-shape-corner-extra-small);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* ==========================================================================
+   Header & Navegação (Alinhado à Paleta da Logo e Seamless com a Hero)
+   ========================================================================== */
+.site-header {
+    background-color: var(--color-logo-navy);
+    background: linear-gradient(180deg, var(--color-logo-dark) 0%, var(--color-logo-navy) 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(75, 195, 242, 0.18);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
+        box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
+        backdrop-filter var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.site-header.header-scrolled {
+    background: rgba(11, 19, 43, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border-bottom-color: rgba(75, 195, 242, 0.28);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    gap: 1.25rem;
+    position: relative;
 }
 
 .logo {
-    width: 120px;
-    height: auto;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    margin: 20px;
-    font-weight: bold;
-}
-
-.menu a:hover {
-    transition: 0.5s;
-    color: #4BC3F2;
-}
-
-.Hero-section {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url("img/eletricasoares15@gmail.com.png");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-}
-
-.Hero-section h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.Hero-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.Hero-content {
-    max-width: 600px;
-    margin: auto;
-}
-
-button {
-    padding: 12px 24px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    background-color: #4BC3F2;
-    color: #fff;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.5s;
-}
-
-button:hover {
-    transform: scale(1.05);
-    background-color: #03588C;
-}
-
-.services-section {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.services-content {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.service-container {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.services-content h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.service-item {
-    display: inline-block;
-    width: 400px;
-    margin: 12px;
-    padding: 32px;
-    border-radius: 12px;
-    background-color: #ffffff;
-    border-bottom: 2px solid #4BC3F2;
-    border-right: 2px solid #4BC3F2;
-    text-align: left;
-    transition: 0.5s;
-}
-
-.service-item ul {
-    margin-top: 16px;
-    padding-left: 20px;
-    margin-bottom: 32px;
-}
-
-.service-item li {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(75, 195, 242, 0.25));
+    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    margin-top: 8px;
     margin-bottom: 8px;
 }
 
-.service-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+.logo:hover {
+    transform: scale(1.02);
 }
 
-.about-section {
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
+.brand-link {
+    display: flex;
+    align-items: center;
+    border-radius: var(--md-sys-shape-corner-small);
 }
 
-.about-content {
+/* MD3 Icon Button para o menu mobile no header escuro */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 46px;
+    height: 46px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(75, 195, 242, 0.3);
+    border-radius: var(--md-sys-shape-corner-full);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        border-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.menu-toggle:hover {
+    background-color: rgba(75, 195, 242, 0.15);
+    border-color: var(--color-logo-cyan);
+}
+
+.hamburger-line {
+    width: 22px;
+    height: 2px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
+        opacity var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* MD3 Pill Navigation Link em Header Escuro */
+.nav-link {
+    font-weight: 600;
+    color: #E2E8F0;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    letter-spacing: 0.1px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.nav-link-active {
+    color: #FFFFFF;
+    background-color: rgba(75, 195, 242, 0.18);
+}
+
+.btn-header {
+    background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, var(--color-logo-darkblue) 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(75, 195, 242, 0.35);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    min-height: 44px;
+    padding: 0.55rem 1.35rem;
+    font-size: 0.875rem;
+}
+
+.btn-header:hover {
+    background: linear-gradient(135deg, var(--color-logo-darkblue) 0%, var(--md-sys-color-primary) 100%);
+    border-color: var(--color-logo-cyan);
+    box-shadow: 0 4px 16px rgba(75, 195, 242, 0.45);
+    transform: translateY(-1px);
+    color: #FFFFFF;
+}
+
+
+/* ==========================================================================
+   MD3 BUTTONS (Filled, Tonal, Outlined & FAB)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    max-width: 1000px;
-    margin: auto;
+    gap: 0.6rem;
+    min-height: 48px;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    border-radius: var(--md-sys-shape-corner-full);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: var(--md-sys-elevation-level1);
+    position: relative;
+    overflow: hidden;
 }
 
-.about-content h2, .about-content p {
-    margin-bottom: 20px;
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    pointer-events: none;
+}
+
+.btn:hover::after {
+    opacity: 0.08;
+}
+
+.btn:active::after {
+    opacity: 0.16;
+}
+
+.btn-lg {
+    min-height: 52px;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+}
+
+.btn-header {
+    min-height: 44px;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.875rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* MD3 Filled Button */
+.btn-primary {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    box-shadow: var(--md-sys-elevation-level1);
+}
+
+.btn-primary:hover {
+    box-shadow: var(--md-sys-elevation-level2);
+    transform: translateY(-1px);
+}
+
+/* MD3 WhatsApp Filled Extended CTA */
+.btn-whatsapp {
+    background-color: var(--color-accent-whatsapp);
+    color: #FFFFFF;
+    box-shadow: var(--md-sys-elevation-level2);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-accent-whatsapp-hover);
+    box-shadow: var(--md-sys-elevation-level3);
+    transform: translateY(-1px);
+}
+
+/* MD3 Outlined Button */
+.btn-outline {
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    color: #FFFFFF;
+    box-shadow: var(--md-sys-elevation-level0);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: #FFFFFF;
+}
+
+.icon-svg {
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Hero Section com Vídeo de Fundo e Textos Translúcidos
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-logo-navy);
+    color: #FFFFFF;
+    padding: 6rem 0 5rem;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(75, 195, 242, 0.2);
+}
+
+/* Container do Vídeo em Tela Cheia */
+.hero-video-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.92) contrast(1.05);
+}
+
+/* Overlay sutil para manter o vídeo evidente enquanto permite leitura fluida */
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(7, 13, 30, 0.70) 0%,
+            rgba(11, 19, 43, 0.35) 45%,
+            rgba(7, 13, 30, 0.80) 100%);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+/* Container translúcido (Frosted Glass) dando foco ao vídeo */
+.hero-content {
+    max-width: 820px;
+    background: rgba(11, 19, 43, 0.42);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(75, 195, 242, 0.25);
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    padding: 2.5rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Badge Translúcido */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(75, 195, 242, 0.15);
+    border: 1px solid rgba(75, 195, 242, 0.45);
+    color: var(--color-logo-cyan);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1.15rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.2px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 0 16px rgba(75, 195, 242, 0.25);
+}
+
+/* Tipografia Translúcida para dar maior foco ao vídeo */
+.hero-content h1 {
+    font-size: clamp(2rem, 4.6vw, 3.15rem);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.15rem;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(226, 232, 240, 0.85);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 720px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-microproof {
+    font-size: 0.875rem;
+    color: rgba(226, 232, 240, 0.88);
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   Trust Badges (MD3 Elevated Outlined Cards)
+   ========================================================================== */
+.trust-badges {
+    background-color: var(--md-sys-color-surface-container-low);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    padding: 2.5rem 0;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.badge-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: var(--md-sys-color-surface-container-lowest);
+    border-radius: var(--md-sys-shape-corner-large);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    box-shadow: var(--md-sys-elevation-level1);
+    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.badge-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--md-sys-elevation-level2);
+}
+
+.badge-icon {
+    font-size: 1.85rem;
+    line-height: 1;
+}
+
+.badge-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-text strong {
+    font-size: 0.95rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.badge-text span {
+    font-size: 0.85rem;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Cabeçalhos de Seção
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3.5rem;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-primary-container);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--md-sys-shape-corner-full);
+    margin-bottom: 0.75rem;
+}
+
+.section-header h2,
+.about-content h2,
+.contact-content h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+    color: var(--md-sys-color-on-surface);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.25px;
+    margin-bottom: 0.85rem;
+}
+
+.section-header p {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+/* ==========================================================================
+   Seção de Serviços (MD3 Elevated Card System)
+   ========================================================================== */
+.services-section {
+    padding: 5rem 0;
+    background-color: var(--md-sys-color-surface);
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    padding: 2.25rem 1.75rem;
+    box-shadow: var(--md-sys-elevation-level1);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    transition: transform var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard),
+        box-shadow var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--md-sys-elevation-level3);
+    border-color: rgba(75, 195, 242, 0.4);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(75, 195, 242, 0.12);
+    border: 1px solid rgba(75, 195, 242, 0.2);
+    border-radius: var(--md-sys-shape-corner-medium);
+}
+
+.service-item h3 {
+    font-size: 1.4rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+.service-desc {
+    font-size: 0.95rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.service-list {
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 1.65rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.95rem;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.45;
+}
+
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--md-sys-color-primary);
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   Seção Quem Somos & Diferenciais (MD3 Tonal Surface Cards)
+   ========================================================================== */
+.about-section {
+    padding: 5rem 0;
+    background-color: var(--md-sys-color-surface-container-low);
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-content p {
+    margin-bottom: 1.25rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1.05rem;
     line-height: 1.6;
 }
 
+.differentials-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.diff-card {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    padding: 1.5rem;
+    border-radius: var(--md-sys-shape-corner-large);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    box-shadow: var(--md-sys-elevation-level1);
+    border-left: 5px solid var(--color-logo-cyan);
+    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.diff-card:hover {
+    transform: translateX(4px);
+}
+
+.diff-card h3 {
+    font-size: 1.15rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.diff-card p {
+    font-size: 0.95rem;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Seção de Depoimentos (MD3 Filled Cards)
+   ========================================================================== */
+.testimonials-section {
+    padding: 5rem 0;
+    background-color: var(--md-sys-color-surface);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.75rem;
+}
+
+.testimonial-card {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    padding: 2rem 1.75rem;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    box-shadow: var(--md-sys-elevation-level1);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.testimonial-card:hover {
+    box-shadow: var(--md-sys-elevation-level2);
+}
+
+.stars {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+    padding-top: 1rem;
+}
+
+.testimonial-author strong {
+    color: var(--md-sys-color-on-surface);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.testimonial-author span {
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Seção de FAQ Acordeão (MD3 Expansion Panels)
+   ========================================================================== */
+.faq-section {
+    padding: 5rem 0;
+    background-color: var(--md-sys-color-surface-container-low);
+}
+
+.faq-container {
+    max-width: 840px;
+}
+
+.faq-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-sys-shape-corner-large);
+    overflow: hidden;
+    transition: box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.faq-item[open] {
+    box-shadow: var(--md-sys-elevation-level1);
+}
+
+.faq-question {
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    min-height: 52px;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-question::after {
+    content: "+";
+    font-size: 1.5rem;
+    color: var(--md-sys-color-primary);
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.faq-item[open] .faq-question::after {
+    content: "−";
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+    padding-top: 1.15rem;
+}
+
+/* ==========================================================================
+   Seção de Contato e Formulário (MD3 Outlined Form Fields)
+   ========================================================================== */
 .section-contact {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #03588C, #4BC3F2);
-    text-align: center;
-    color: #fff;
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--md-sys-color-inverse-surface) 0%, #152233 100%);
+    color: #FFFFFF;
 }
 
-.contact-content {
-    max-width: 600px;
-    margin: auto;
+.section-contact .section-tag {
+    background-color: rgba(203, 230, 255, 0.2);
+    color: #CCE5FF;
 }
 
-.contact-content h2, .contact-content p {
-    margin-bottom: 20px;
+.section-contact h2 {
+    color: #FFFFFF;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-content p {
+    color: #CBD5E1;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .contact-info {
-    margin: 20px 0;
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: 2.25rem;
 }
 
-footer {
-    background-color: #03588C;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 1.25rem;
+    border-radius: var(--md-sys-shape-corner-medium);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-item strong {
+    font-size: 0.85rem;
+    color: #94A3B8;
+    margin-bottom: 0.35rem;
+}
+
+.contact-item a,
+.contact-item span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    word-break: break-word;
+}
+
+/* MD3 Card Formulário */
+.contact-form-wrapper {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface);
+    padding: 2.5rem 2rem;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.contact-form h3 {
+    font-size: 1.4rem;
+    color: var(--md-sys-color-on-surface);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.35rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--md-sys-color-on-surface);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1px;
+}
+
+/* MD3 Outlined Text Field */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface);
+    border: 1.5px solid var(--md-sys-color-outline-variant);
+    border-radius: var(--md-sys-shape-corner-small);
+    min-height: 48px;
+    transition: border-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: var(--md-sys-color-outline);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-surface-container-lowest);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--md-sys-color-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ==========================================================================
+   Rodapé Completo (MD3 Elevated Dark Footer)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--color-logo-dark);
+    color: #94A3B8;
+    padding: 4.5rem 0 0;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(75, 195, 242, 0.18);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.footer-logo {
+    width: auto;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 1.25rem;
+    filter: drop-shadow(0 2px 6px rgba(75, 195, 242, 0.25));
+}
+
+.footer-desc {
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.footer-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    background-color: rgba(75, 195, 242, 0.1);
+    color: var(--color-logo-cyan);
+    border: 1px solid rgba(75, 195, 242, 0.25);
+    border-radius: var(--md-sys-shape-corner-full);
+}
+
+.footer-heading {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.2px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-links a {
+    color: #94A3B8;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--color-logo-cyan);
+    transform: translateX(4px);
+}
+
+.footer-contact p {
+    margin-bottom: 0.9rem;
+    line-height: 1.5;
+    color: #CBD5E1;
+}
+
+.footer-contact a {
+    color: var(--color-logo-cyan);
+    font-weight: 600;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #040812;
+    padding: 1.5rem 0;
+}
+
+.footer-bottom-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #64748B;
+}
+
+.footer-credits {
+    color: #94A3B8;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom-inner {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   Botão Flutuante do WhatsApp (MD3 Extended FAB com Pulso Sutil)
+   ========================================================================== */
+@keyframes whatsappPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.15), 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 6px 18px 3px rgba(22, 163, 74, 0.45), 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 1100;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: var(--color-accent-whatsapp);
+    color: #FFFFFF;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--md-sys-shape-corner-large);
+    box-shadow: var(--md-sys-elevation-level3);
+    min-width: 56px;
+    min-height: 56px;
+    justify-content: center;
+    animation: whatsappPulse 3.5s ease-in-out infinite;
+    transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
+        background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.whatsapp-float:hover {
+    background-color: var(--color-accent-whatsapp-hover);
+    color: #FFFFFF;
+    box-shadow: var(--md-sys-elevation-level4);
+    transform: translateY(-2px);
+}
+
+.whatsapp-tooltip {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1px;
+}
+
+/* ==========================================================================
+   Media Queries & Responsividade (Mobile & Tablet <= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4.5rem 0 3.5rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 1.75rem 1.25rem;
+        border-radius: var(--md-sys-shape-corner-large);
+    }
+
+    .topbar-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* MD3 Navigation Drawer Modal Style alinhado ao Header Escuro */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-logo-navy);
+        background: linear-gradient(180deg, var(--color-logo-navy) 0%, var(--color-logo-dark) 100%);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.5rem;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+        border-bottom-left-radius: var(--md-sys-shape-corner-extra-large);
+        border-bottom-right-radius: var(--md-sys-shape-corner-extra-large);
+        border-top: 1px solid rgba(75, 195, 242, 0.2);
+        border-bottom: 1px solid rgba(75, 195, 242, 0.2);
+        gap: 1.25rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.85rem 1rem;
+        border-radius: var(--md-sys-shape-corner-medium);
+        font-size: 1rem;
+        color: var(--color-logo-cyan);
+    }
+
+    .nav-link:hover {
+        color: #FFFFFF;
+        background-color: rgba(75, 195, 242, 0.18);
+    }
+
+    .btn-header {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+
+    .whatsapp-float {
+        padding: 0.85rem;
+        border-radius: var(--md-sys-shape-corner-full);
+    }
 }

@@ -1,0 +1,13 @@
+{
+  "name": "landing-page-eletrica",
+  "version": "1.0.0",
+  "description": "Landing Page de Alta Conversão para Soares Instalações Elétricas",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Soares Instalações Elétricas",
+  "license": "ISC"
+}
+
