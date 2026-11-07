@@ -4,6 +4,7 @@
   "description": "Landing Page de Alta Conversão para Soares Instalações Elétricas",
   "type": "module",
   "scripts": {
+    "build": "node -e \"console.log('Build OK: Static files ready for Vercel')\"",
     "start": "node server.js"
   },
   "keywords": [],
